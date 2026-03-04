@@ -1,0 +1,45 @@
+Desafio
+Seu vizinho, o professor Alberto Ainstem, tem muitas provas para corrigir. Porém, o que ele acha mais difícil é calcular as médias aritméticas para saber a média final dos alunos. Como todos estão ansiosos para concluir o semestre, estão pressionando muito o pobre professor Alberto. Então, como ele sabe das suas habilidades em programação, pediu para que você criasse um programa que calculasse essas médias para ele.
+
+Entrada
+A entrada serão três (03) valores inteiros.
+
+Saída
+A saída deverá ser a média aritmética desses três valores.
+
+Exemplo
+Entrada	Saída
+    3
+    3
+    3	    Media = 3.00    
+    10
+    15
+    
+
+     5	    Media = 10.00
+     3
+     7
+     2
+
+     Media = 4.00    
+
+Resposta :
+#include<stdio.h>
+
+int main() {
+    float a, b, c, media;
+
+    // Lendo os três valores de entrada
+    scanf("%f", &a);
+    scanf("%f", &b);
+    scanf("%f", &c);
+
+    // TODO: Calcule a média aritmética
+    media = (a + b + c) / 3;
+
+    // Imprime o resultado. 
+    // Usei %.2f para que a nota apareça com duas casas decimais, facilitando a leitura do professor.
+    printf("%.2f", media);
+
+    return 0;
+}
