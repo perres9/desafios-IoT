@@ -29,17 +29,127 @@ Resposta :
 int main() {
     float a, b, c, media;
 
-    // Lendo os três valores de entrada
     scanf("%f", &a);
     scanf("%f", &b);
     scanf("%f", &c);
 
-    // TODO: Calcule a média aritmética
-    media = (a + b + c) / 3;
+    // Calculando a média aritmética
+    media = (a + b + c) / 3.0;
+    
+    // Imprimindo no formato exato solicitado: "Media = " + valor com 2 casas decimais
+    printf("Media = %.2f", media);
 
-    // Imprime o resultado. 
-    // Usei %.2f para que a nota apareça com duas casas decimais, facilitando a leitura do professor.
-    printf("%.2f", media);
+    getchar();
+    return 0;
+}
+                
+Desafio 2 
+Com a chegada do fim do ano, o espirito natalino tomou conta da empresa e eles decidiram dar uma gratificação para todos os funcionários. Porém, todo mundo ficou confuso em como seria calculado o imposto sobre o salário com essa gratificação. Então o setor de TI ficou responsável por criar um programa que auxiliasse os funcionários dos outros setores a calcular quanto receberiam de salário com a gratificação e o imposto. Como você é o mais novo a entrar na empresa, ficou responsável por essa tarefa.
 
+Lembrando que:
+- A gratificação foi de 5% do salário do funcionário.
+
+- O Imposto é de 7% sobre o salário total.
+
+Entrada
+A entrada vai ser o salário de cada um dos funcionários, um de cada vez.
+
+Saída
+A saída deve ser o salário desse determinado funcionário após a gratificação e o imposto com 2 dígitos após a vírgula.
+
+Exemplo
+Entrada	Saída
+    1000    	    Salario final: 980.00    
+    2500	    Salario final: 2450.00 
+    3250	    Salario final: 3185.00    
+
+Código 2 - 
+#include<stdio.h>
+
+int main() {
+    float salarioBase, salarioFinal;
+    
+    scanf("%f", &salarioBase);
+    
+    // Calcula: +5% gratificação, -7% imposto = -2% no total
+    salarioFinal = salarioBase * 0.98;
+    
+    printf("Salario final: %.2f", salarioFinal);
+    
+    return 0;
+}
+
+Desafio 3 
+Desafio
+
+Uma fábrica de bonecos de ação está super valorizada e produzindo muito após o lançamento do novo filme do homem aranha. Eles estão produzindo bonecos dos três homens aranhas existentes no cinema.
+O custo ao consumidor desses bonecos é a soma do preço da fábrica com o percentual de lucro do distribuidor e dos impostos aplicados ao preço da fábrica.
+
+Seu chefe pediu que você calculasse três valores para cada um dos bonecos, incluindo os vilões e personagens secundários: 
+- O valor correspondente ao lucro do consumidor.
+
+- O valor correspondendo aos impostos.
+
+- O preço final dos bonecos.
+
+Com seu conhecimento em programação você decidiu criar um programa que fizesse esse cálculo somente com a entrada do preço dos bonecos.
+
+Entrada
+
+A entrada serão três valores respectivamente: Preço da Fábrica, Percentual do Distribuidor e Percentual de Imposto
+
+Saída
+
+A saída deverá ser o valor correspondente ao lucro do consumidor, os impostos e o preço final dos bonecos.
+
+Exemplo
+
+Entrada	Saída
+    500
+     25
+     10	
+Lucro: R$ 125.00  
+Impostos: R$ 50.00
+Preco final: R$ 675.00 
+ 
+    650
+     35
+      5	
+Lucro: R$ 227.00  
+Impostos: R$ 32.50
+Preco final: R$ 910.00
+ 
+    250
+     50
+      5	
+Lucro: R$ 125.00  
+Impostos: R$ 12.50
+Preco final: R$ 387.50
+código : 
+#include<stdio.h>
+
+int main() {
+    float precoFabrica, lucro, impostos, precoFinal;
+    float percentualLucro, percentualImpostos;
+
+    scanf("%f", &precoFabrica);
+    scanf("%f", &percentualLucro);
+    scanf("%f", &percentualImpostos);
+
+    // Calculando o lucro (percentual do distribuidor sobre o preço de fábrica)
+    lucro = precoFabrica * (percentualLucro / 100);
+    
+    // Calculando os impostos (percentual de imposto sobre o preço de fábrica)
+    impostos = precoFabrica * (percentualImpostos / 100);
+    
+    // Calculando o preço final (preço de fábrica + lucro + impostos)
+    precoFinal = precoFabrica + lucro + impostos;
+    
+    // Imprimindo os resultados conforme o formato do exemplo
+    printf("Lucro: R$ %.2f\n", lucro);
+    printf("Impostos: R$ %.2f\n", impostos);
+    printf("Preco final: R$ %.2f", precoFinal);
+
+    getchar();
     return 0;
 }
